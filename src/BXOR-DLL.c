@@ -8,7 +8,7 @@
 # define EXPORT __declspec(dllimport)
 # endif
 
-EXPORT unsigned char* __stdcall modifyBytes(unsigned char* inputCharArray, int len, unsigned char key){  
+EXPORT unsigned char* __stdcall BXORBytes(unsigned char* inputCharArray, int len, unsigned char key){  
   for(int i=0; i<len; i++)
   {
       inputCharArray[i] = inputCharArray[i] ^ key;
