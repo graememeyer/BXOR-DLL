@@ -2,7 +2,7 @@
 A small DLL, written in C, that performs a bitwise-XOR operation on an input set of bytes, using a provided key.
 
 # Use Instructions
-I've created an example C# console application that demonstrates how to call the function exposed in this DLL: [/graememeyer/CS-BXOR-DLL-EXAMPLE](https://github.com/graememeyer/CS-BXOR-DLL-EXAMPLE/)
+I've created an example C# console application that demonstrates how to call the function exposed in this DLL: [graememeyer/CS-BXOR-DLL-EXAMPLE](https://github.com/graememeyer/CS-BXOR-DLL-EXAMPLE/)
 
 # Compilation Instructions
 
