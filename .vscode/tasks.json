@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C: gcc.exe build the object file.",
+			"command": "gcc.exe",
+			"args": [
+				"-c",
+				"-DBUILD_DLL",
+				"${file}",
+				"-o",
+				".\\bin\\${fileBasenameNoExtension}.o"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false
+			}
+		},
+		{
+			"type": "shell",
+			"label": "C: gcc.exe build the dll.",
+			"command": "gcc.exe",
+			"args": [
+				"-shared",
+				"-o",
+				".\\bin\\${fileBasenameNoExtension}.dll",
+				".\\bin\\${fileBasenameNoExtension}.o",
+				"'-Wl,--add-stdcall-alias'"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"C: gcc.exe build the object file."
+			],
+			"dependsOrder": "sequence",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		}
+	]
+}
